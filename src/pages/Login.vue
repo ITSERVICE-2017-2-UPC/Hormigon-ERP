@@ -1,6 +1,6 @@
 <template>
    <div class="container">
-      <h1>MyPerp</h1>
+      <h1>HORMIGÓN ERP</h1>
       <form>
          <div class="row">
             <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">

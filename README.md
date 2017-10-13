@@ -1,4 +1,4 @@
-# myperp
+# HORMIGÓN ERP
 
 > Proyecto Cloud ERP Open Source creado usando Vue.js
 
