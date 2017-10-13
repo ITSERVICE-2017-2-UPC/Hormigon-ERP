@@ -5,7 +5,8 @@
          v-bind:class="{ 'btn-lg': isLarge, 'btn-primary': isPrimary, 'btn-secondary': isSecondary,
          'btn-success': isSuccess, 'btn-danger': isDanger, 'btn-sm': isSmall, 'disabled': isDisabled,
          'btn-info': isInfo, 'btn-ligth': isLigth, 'btn-dark': isDark, 'btn-block': isBlock }"
-         v-bind:style="{ 'width': width, 'height': height }">
+         v-bind:style="{ 'width': width, 'height': height }"
+         v-bind:type="type">
          <slot></slot>
       </button>
    </div>
@@ -55,6 +56,9 @@
          },
          height: {
             default: 'auto'
+         },
+         type: {
+            default: 'button'
          }
       }
    }
