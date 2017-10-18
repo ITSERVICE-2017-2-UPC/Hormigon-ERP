@@ -1,17 +1,25 @@
 'use strict'
+require('dotenv').config();
 require('./check-versions')()
+
+//Rutas de acceso
+const index = require('../lib/routes/index');
 
 const config = require('../config')
 if (!process.env.NODE_ENV) {
-  process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
+   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 }
 
-const opn = require('opn')
-const path = require('path')
-const express = require('express')
-const webpack = require('webpack')
-const proxyMiddleware = require('http-proxy-middleware')
-const webpackConfig = require('./webpack.dev.conf')
+const opn = require('opn');
+const path = require('path');
+const express = require('express');
+const session = require('express-session');
+const webpack = require('webpack');
+const bodyParser = require('body-parser');
+const LevelStore = require('express-session-level')(session);
+const sessions_db = require('../lib/utils/db').sessions_db;
+const proxyMiddleware = require('http-proxy-middleware');
+const webpackConfig = require('./webpack.dev.conf');
 
 // default port where dev server listens for incoming traffic
 const port = process.env.PORT || config.dev.port
@@ -47,13 +55,26 @@ const hotMiddleware = require('webpack-hot-middleware')(compiler, {
 // compilation error display
 app.use(hotMiddleware)
 
+app.use(bodyParser.json());
+
+app.use(session({
+   secret: 'el-secreto-esta-en-tu-corazon',
+   name: 'hormigon-session',
+   store: new LevelStore(sessions_db),
+   resave: false,
+   saveUninitialized: false,
+   cookie: { /*secure : true, */ httpOnly: true }
+}));
+
+app.use('/', index);
+
 // proxy api requests
 Object.keys(proxyTable).forEach(function (context) {
-  const options = proxyTable[context]
-  if (typeof options === 'string') {
-    options = { target: options }
-  }
-  app.use(proxyMiddleware(options.filter || context, options))
+   const options = proxyTable[context]
+   if (typeof options === 'string') {
+      options = { target: options }
+   }
+   app.use(proxyMiddleware(options.filter || context, options))
 })
 
 // handle fallback for HTML5 history API
@@ -71,8 +92,8 @@ const uri = 'http://localhost:' + port
 var _resolve
 var _reject
 var readyPromise = new Promise((resolve, reject) => {
-  _resolve = resolve
-  _reject = reject
+   _resolve = resolve
+   _reject = reject
 })
 
 var server
@@ -81,25 +102,25 @@ portfinder.basePort = port
 
 console.log('> Starting dev server...')
 devMiddleware.waitUntilValid(() => {
-  portfinder.getPort((err, port) => {
-    if (err) {
-      _reject(err)
-    }
-    process.env.PORT = port
-    var uri = 'http://localhost:' + port
-    console.log('> Listening at ' + uri + '\n')
-    // when env is testing, don't need open it
-    if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
-      opn(uri)
-    }
-    server = app.listen(port)
-    _resolve()
-  })
+   portfinder.getPort((err, port) => {
+      if (err) {
+         _reject(err)
+      }
+      process.env.PORT = port
+      var uri = 'http://localhost:' + port
+      console.log('> Listening at ' + uri + '\n')
+      // when env is testing, don't need open it
+      if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
+         opn(uri)
+      }
+      server = app.listen(port)
+      _resolve()
+   })
 })
 
 module.exports = {
-  ready: readyPromise,
-  close: () => {
-    server.close()
-  }
+   ready: readyPromise,
+   close: () => {
+      server.close()
+   }
 }
