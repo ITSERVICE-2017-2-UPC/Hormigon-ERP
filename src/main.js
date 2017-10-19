@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueResource from 'vue-resource'
+import MainCss from './styles/main-style.css'
 
 Vue.use(VueResource);
 
