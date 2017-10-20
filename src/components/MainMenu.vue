@@ -7,7 +7,7 @@
             </div>
             <div class="divider"></div>
             <div v-for="item in MenuItems" v-bind:key="item.name">
-               <div class="sidebar-item">
+               <div class="sidebar-item" v-on:click="mainRedirect(item.path)">
                   <span>{{item.name}}</span>
                </div>
             </div>
@@ -36,6 +36,14 @@ export default {
             {
                name: 'Contabilidad',
                path: '/contabilidad'
+            },
+            {
+               name: 'Finanzas',
+               path: '/finanzas'
+            },
+            {
+               name: 'Configuración',
+               path: '/config'
             }
          ]
       }
@@ -46,7 +54,10 @@ export default {
       }
    },
    methods: {
-
+      mainRedirect: function(route_path){
+         console.log(route_path);
+         this.$router.push(route_path);
+      }
    }
 }
 </script>
