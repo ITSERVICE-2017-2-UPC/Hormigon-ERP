@@ -8,7 +8,7 @@
          <div class="bar3"></div>
       </div>
       <main-menu :is-hidden="isHidden"></main-menu>
-      <div class="main-router-wrapper" v-bind:class="{'main-router-lg': !isSmall}" style="text-align: left">
+      <div class="main-router-wrapper" v-bind:class="{'main-router-lg': !isSmall}" style="text-align: left;">
          <router-view></router-view>
       </div>
    </div>
@@ -27,6 +27,7 @@ export default {
          isHidden: false,
          isSmall: false,
          width: 0,
+         mainWidth: 0,
       }
    },
    methods: {
@@ -39,16 +40,21 @@ export default {
             this.isHidden = true;
             this.ham_stat = false;
             this.isSmall = true;
+            this.mainWidth = document.documentElement.clientWidth;
          }
          else{
             this.isHidden = false;
             this.isSmall = false;
+            this.mainWidth = document.documentElement.clientWidth - 300;
          }
       },
       ham_change: function(){
          this.ham_stat = !this.ham_stat;
          this.isHidden = !this.isHidden;
       }
+   },
+   beforeCreate(){
+      this.mainWidth = document.documentElement.clientWidth - 300;
    },
    mounted() {
       this.$nextTick(function(){

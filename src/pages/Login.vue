@@ -1,28 +1,32 @@
 <template>
-   <div class="container">
-      <h1>HORMIGÓN ERP</h1>
-      <form>
-         <div class="row">
-            <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
-               <text-box :type="'email'" :placeholder="'e-mail'" v-model="username"></text-box>
-            </div>
+   <div class="bootstrap">
+      <div class="container">
+         <div style="padding: 50px 0px 25px 0px">
+            <h1>HORMIGÓN ERP</h1>
          </div>
-         <div class="row">
-            <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
-               <text-box :type="'password'" :placeholder="'Contraseña'" v-model="password"></text-box> 
+         <form>
+            <div class="row">
+               <div class="col-xs-10 offset-xs-1 col-sm-6 offset-sm-3">
+                  <text-box :type="'email'" :placeholder="'e-mail'" v-model="correo"></text-box>
+               </div>
             </div>
-         </div>
-         <div class="row">
-            <div class="col-xs-12">
-               <bootstrap-button :type="'button'" :is-large="true" :is-primary="true" :width="'300px'" v-on:click.native="sendLogin()">Iniciar Sesión</bootstrap-button>
+            <div class="row">
+               <div class="col-xs-10 offset-xs-1 col-sm-6 offset-sm-3">
+                  <text-box :type="'password'" :placeholder="'Contraseña'" v-model="clave"></text-box> 
+               </div>
             </div>
-         </div>
-         <div class="row">
-            <div class="col-xs-12" style="margin-top:15px">
-               <bootstrap-button :is-large="true" :is-success="true" :width="'300px'">Registrarse</bootstrap-button>
+            <div class="row">
+               <div class="col-lg-6 offset-lg-3">
+                  <bootstrap-button :type="'button'" :is-large="true" :is-primary="true" :width="'300px'" v-on:click.native="sendLogin()">Iniciar Sesión</bootstrap-button>
+               </div>
             </div>
-         </div>
-      </form>
+            <div class="row">
+               <div class="col-lg-6 offset-lg-3" style="margin-top:15px">
+                  <bootstrap-button :is-large="true" :is-success="true" :width="'300px'">Registrarse</bootstrap-button>
+               </div>
+            </div>
+         </form>
+      </div>
    </div>
 </template>
 
@@ -33,8 +37,8 @@
    export default {
       data() {
          return {
-            username: '',
-            password: '',
+            correo: '',
+            clave: '',
          }
       },
       components: {
@@ -43,9 +47,9 @@
       },
       methods: {
          sendLogin : function(){
-            this.$http.post('/login', { username: this.username, password: this.password} ).then(function(response){
+            this.$http.post('/login', { correo: this.correo, clave: this.clave} ).then(function(response){
                if(response){
-                  return console.log(response);
+                  return this.$router.go('/');
                }
             }).catch(function(err){
                return console.error(err);

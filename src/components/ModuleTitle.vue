@@ -1,6 +1,10 @@
 <template>
    <div>
-      <slot></slot>
+      <div class="module-title-wrap">
+         <div class="module-title">
+            <slot></slot>
+         </div>
+      </div>
    </div>
 </template>
 
@@ -9,7 +13,3 @@ export default {
 
 }
 </script>
-
-<style>
-
-</style>
