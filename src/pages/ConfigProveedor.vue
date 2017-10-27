@@ -1,6 +1,11 @@
 <template>
    <div>
       <module-title>Proveedor</module-title>
+      <div class="bootstrap">
+         <div class="container">
+            
+         </div>
+      </div>
    </div>
 </template>
 

@@ -42,9 +42,9 @@ export default {
                      'path': '/config/usuario'
                   },
                   {
-                     'name': 'Proveedores',
+                     'name': 'Gestión de Usuarios',
                      'index': 2,
-                     'path': '/config/proveedor'
+                     'path': '/config/admin/usuario'
                   },
                   {
                      'name': 'Proveedores',

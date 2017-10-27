@@ -5,6 +5,7 @@ import MasterPage from '@/pages/MasterPage'
 import Login from '@/pages/Login'
 import Configuracion from '@/pages/Configuracion'
 import ConfigUsuario from '@/pages/ConfigUsuario'
+import GestionUsuario from '@/pages/config/admin/GestionUsuario'
 import ConfigProveedor from '@/pages/ConfigProveedor'
 
 Vue.use(Router)
@@ -24,6 +25,10 @@ export default new Router({
             {
                path: 'config/proveedor',
                component: ConfigProveedor
+            },
+            {
+               path: 'config/admin/usuario',
+               component: GestionUsuario
             }
          ]
       },
