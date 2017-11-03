@@ -1,7 +1,7 @@
 <template>
    <div>
       <module-title>Proveedor</module-title>
-      <div class="bootstrap">
+       <div>
          <div class="container">
             
          </div>

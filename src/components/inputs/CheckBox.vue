@@ -1,5 +1,5 @@
 <template>
-   <div class="bootstrap" style="background-color: transparent">
+   <div   style="background-color: transparent">
       <button class="btn btn-primary" style="padding: 5px 4px 0 4px" v-on:click="changeValue()">
          <i class="material-icons" v-if="localChecked">check_box</i>
          <i class="material-icons" v-else>check_box_outline_blank</i>

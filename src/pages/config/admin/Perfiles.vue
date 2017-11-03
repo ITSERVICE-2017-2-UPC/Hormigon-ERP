@@ -1,7 +1,7 @@
 <template>
    <div>
       <module-title>Gestión de Perfiles</module-title>
-      <div class="bootstrap">
+       <div>
          <div class="container">
             <div class="h-padding-basic">
                <div class="row">

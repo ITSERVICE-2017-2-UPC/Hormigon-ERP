@@ -2,7 +2,7 @@
    <div>
       <module-title>Usuario</module-title>
       <div>
-         <div class="bootstrap">
+          <div>
             <div class="container">
                <div class="container">
                   <div class="module-subtitle">Datos Personales</div>         

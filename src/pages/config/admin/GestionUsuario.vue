@@ -1,7 +1,7 @@
 <template>
    <div>
       <module-title>Gestion de Usuarios</module-title>
-      <div class="bootstrap">
+       <div>
          <div class="container">
             <div class="row h-padding-basic">
                <div class="col-md-2">

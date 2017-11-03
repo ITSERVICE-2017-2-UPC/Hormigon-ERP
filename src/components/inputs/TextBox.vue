@@ -1,5 +1,5 @@
 <template>
-   <div class="bootstrap">
+    <div>
       <div class="form-group">
          <input ref="input" v-bind:type="type" class="form-control" v-bind:placeholder="placeholder"
          v-bind:value="value" v-on:input="updateValue($event.target.value)">

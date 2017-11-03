@@ -1,9 +1,9 @@
 <template>
    <div>
       <module-title>Nuevo Perfil</module-title>
-      <div class="bootstrap">
+       <div>
          <div class="container">
-            <div class="row">
+            <div class="row" style="padding: 0 0 0 20px">
                <div class="col-md-5 h-padding-basic">
                   <text-box :placeholder="'Nombre'" v-model="nombre"></text-box>               
                </div>

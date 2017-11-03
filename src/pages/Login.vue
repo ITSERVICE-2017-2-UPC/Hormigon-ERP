@@ -1,5 +1,5 @@
 <template>
-   <div class="bootstrap">
+    <div>
       <div class="container">
          <div style="padding: 50px 0px 25px 0px">
             <h1>HORMIGÓN ERP</h1>

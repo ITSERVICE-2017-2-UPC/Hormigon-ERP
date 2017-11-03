@@ -1,5 +1,5 @@
 <template>
-   <div class="bootstrap">
+    <div>
       <button class="btn"
          v-bind:disabled="isDisabled"
          v-bind:class="{ 'btn-lg': isLarge, 'btn-primary': isPrimary, 'btn-secondary': isSecondary,
