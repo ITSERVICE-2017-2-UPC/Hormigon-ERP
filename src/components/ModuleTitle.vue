@@ -1,5 +1,5 @@
 <template>
-   <div>
+   <div class="bootstrap">
       <div class="module-title-wrap">
          <div class="module-title">
             <slot></slot>

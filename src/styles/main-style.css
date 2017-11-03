@@ -127,21 +127,23 @@
 }
 
 .h-table {
-   border-collapse: collapse;
+   border-collapse: separate;
+   -webkit-border-top-left-radius: 20px;
+   -webkit-border-top-right-radius: 20px;
+   -moz-border-radius-topleft: 20px;
+   -moz-border-radius-topright: 20px;
+   border-top-left-radius: 20px;
+   border-top-right-radius: 20px;
 }
 
 .h-table th {
    background-color: #688df1;
    padding: 10px 25px 10px 25px;
-   border: solid 1px; 
-   border-color: black;   
 }
 
 .h-table td {
    padding: 10px 25px 10px 25px;
-   border: solid 1px; 
    white-space: nowrap;
-   border-color: black;   
 }
 
 .h-table tr{
@@ -162,4 +164,10 @@
 
 .h-overflow-scroll {
    overflow: auto;
+}
+
+@media screen and (max-width: 997px) {
+   .module-title{
+      padding-left: 90px;
+   }
 }

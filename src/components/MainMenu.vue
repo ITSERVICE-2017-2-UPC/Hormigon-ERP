@@ -37,20 +37,20 @@ export default {
                'name': 'Configuración',
                'paths': [
                   {
-                     'name': 'Usuario',
+                     'name': 'Gestionar Usuarios',
                      'index': 1,
-                     'path': '/config/usuario'
-                  },
-                  {
-                     'name': 'Gestión de Usuarios',
-                     'index': 2,
                      'path': '/config/admin/usuario'
                   },
                   {
-                     'name': 'Proveedores',
+                     'name': 'Gestionar Perfiles',
+                     'index': 2,
+                     'path': '/config/admin/perfil'
+                  },
+                  {
+                     'name': 'Usuario',
                      'index': 3,
-                     'path': '/config/proveedor'
-                  }
+                     'path': '/config/usuario'
+                  },
                ]               
             },
             {
