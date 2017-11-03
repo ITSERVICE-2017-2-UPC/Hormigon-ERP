@@ -22,7 +22,7 @@
             </div>
             <div class="row">
                <div class="col-lg-6 offset-lg-3" style="margin-top:15px">
-                  <bootstrap-button :is-large="true" :is-success="true" :width="'300px'">Registrarse</bootstrap-button>
+                  <bootstrap-button :is-large="true" :is-success="true" :width="'300px'" v-on:click.native="sendRegister()">Registrarse</bootstrap-button>
                </div>
             </div>
          </form>
@@ -54,6 +54,9 @@
             }).catch(function(err){
                return console.error(err);
             });
+         },
+         sendRegister : function(){
+           return this.$router.push('/registro');
          }
       }
    }

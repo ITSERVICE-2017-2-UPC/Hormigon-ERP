@@ -9,6 +9,7 @@ import Configuracion from '@/pages/Configuracion'
 import ConfigUsuario from '@/pages/ConfigUsuario'
 import GestionUsuario from '@/pages/config/admin/GestionUsuario'
 import ConfigProveedor from '@/pages/ConfigProveedor'
+import SolicitudRegistro from '@/pages/SolicitudRegistro'
 
 Vue.use(Router)
 
@@ -45,6 +46,10 @@ export default new Router({
       {
          path: '/login',
          component: Login,
+      },
+      {
+         path: '/registro',
+         component: SolicitudRegistro
       }
    ]
 });

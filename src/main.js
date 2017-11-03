@@ -20,7 +20,7 @@ router.beforeEach(function(to, from, next){
          console.log(response)
          console.log(to.path);
          if(response == 'true'){
-            if(to.path == '/login'){
+            if(to.path == '/login' || to.path == '/registro'){
                return next({path: '/'});
             }
             else{
@@ -28,7 +28,7 @@ router.beforeEach(function(to, from, next){
             }
          }
          else{
-            if(to.path == '/login'){
+            if(to.path == '/login' || to.path == '/registro'){
                return next();
             }
             else{
