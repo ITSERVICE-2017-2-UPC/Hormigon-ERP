@@ -1,7 +1,10 @@
 <template>
     <div>
       <div class="form-group">
-         <input ref="input" v-bind:type="type" class="form-control" v-bind:placeholder="placeholder"
+         <div v-if="labelText != ''">
+            <label v-bind:for="id">{{ labelText }}</label>
+         </div>
+         <input ref="input" v-bind:id="id" v-bind:type="type" class="form-control" v-bind:placeholder="placeholder"
          v-bind:value="value" v-on:input="updateValue($event.target.value)">
       </div>
    </div>
@@ -23,6 +26,12 @@
          },
          value: {
             default: ''
+         },
+         labelText: {
+           default: ''
+         },
+         id: {
+            default: 0
          }
       },
       methods: {

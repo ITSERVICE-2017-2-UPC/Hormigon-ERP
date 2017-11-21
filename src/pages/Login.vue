@@ -49,6 +49,8 @@
          sendLogin : function(){
             this.$http.post('/login', { correo: this.correo, clave: this.clave} ).then(function(response){
                if(response){
+                  console.log(response);
+                  localStorage.setItem('id_usuario', response.body[0].id_usuario);
                   return this.$router.go('/');
                }
             }).catch(function(err){

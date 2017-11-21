@@ -3,7 +3,8 @@ require('dotenv').config();
 require('./check-versions')()
 
 //Rutas de acceso
-const index = require('../lib/routes/index');
+const index   = require('../lib/routes/index');
+const usuario = require('../lib/routes/usuario');
 
 const config = require('../config')
 if (!process.env.NODE_ENV) {
@@ -67,6 +68,7 @@ app.use(session({
 }));
 
 app.use('/', index);
+app.use('/config/usuario', usuario);
 
 // proxy api requests
 Object.keys(proxyTable).forEach(function (context) {
