@@ -36,9 +36,8 @@
       },
       methods: {
          updateValue: function(value){
-            var formatedValue = value.trim();
-            this.$refs.input.value = formatedValue;
-            this.$emit('input', formatedValue);
+            this.$refs.input.value = value;
+            this.$emit('input', value);
          }
       }
    }

@@ -1,25 +1,27 @@
 <template>
    <div>
-      <div class="sidebar-wrapper" v-bind:class="{'sidebar-lg': !isHidden, 'sidebar-sm': isHidden}">
-         <div class="sidebar-container">
-            <div class="sidebar-logo">
-               <span>Hormigón ERP</span>
-            </div>
-            <div class="divider"></div>
-            <div v-for="item in MenuItems" v-bind:key="item.index">
-               <div class="sidebar-item" v-on:click="setActiveIndexId(item.index)">
-                  <span>{{item.name}}</span>
+      <div>
+         <div class="sidebar-wrapper" v-bind:class="{'sidebar-lg': !isHidden, 'sidebar-sm': isHidden}">
+            <div class="sidebar-container">
+               <div class="sidebar-logo">
+                  <span>Hormigón ERP</span>
                </div>
-               <div v-for="subitem in item.paths" v-bind:key="subitem.index">
-                  <div class="menu-item-list" v-bind:style="{ 'height': (item.index === activeIndex) ? '46px' : '0px' }">
-                     <div class="menu-item" v-on:click="mainRedirect(subitem.path)">
-                        {{subitem.name}}
+               <div class="divider"></div>
+               <div v-for="item in MenuItems" v-bind:key="item.index">
+                  <div class="sidebar-item" v-on:click="setActiveIndexId(item.index)">
+                     <span>{{item.name}}</span>
+                  </div>
+                  <div v-for="subitem in item.paths" v-bind:key="subitem.index">
+                     <div class="menu-item-list" v-bind:style="{ 'height': (item.index === activeIndex) ? '46px' : '0px' }">
+                        <div class="menu-item" v-on:click="mainRedirect(subitem.path)">
+                           {{subitem.name}}
+                        </div>
                      </div>
                   </div>
                </div>
-            </div>
-            <div class="sidebar-item" v-on:click="redirectLogout()">
-               <span>Cerrar Sesión</span>
+               <div class="sidebar-item" v-on:click="redirectLogout()">
+                  <span>Cerrar Sesión</span>
+               </div>
             </div>
          </div>
       </div>

@@ -9,8 +9,10 @@ import Configuracion from '@/pages/Configuracion'
 import ConfigUsuario from '@/pages/ConfigUsuario'
 import GestionCompras from '@/pages/logistica/GestionCompras'
 import GestionUsuario from '@/pages/config/admin/GestionUsuario'
+import NuevaCategoria from '@/pages/logistica/NuevaCategoria'
 import ConfigProveedor from '@/pages/ConfigProveedor'
 import SolicitudRegistro from '@/pages/SolicitudRegistro'
+import GestionCategorias from '@/pages/logistica/GestionCategorias'
 
 Vue.use(Router)
 
@@ -45,7 +47,14 @@ export default new Router({
             {
                path: 'logistica/compras',
                component: GestionCompras
-
+            },
+            {
+               path: 'logistica/categorias',
+               component: GestionCategorias
+            },
+            {
+               path: 'logistica/categorias/nuevo',
+               component: NuevaCategoria,
             }
          ]
       },
