@@ -4,9 +4,11 @@ import Router from 'vue-router'
 import Login from '@/pages/Login'
 import Perfiles from '@/pages/config/admin/Perfiles'
 import MasterPage from '@/pages/MasterPage'
+import NuevaMarca from '@/pages/logistica/NuevaMarca'
 import NuevoPerfil from '@/pages/config/admin/NuevoPerfil'
 import Configuracion from '@/pages/Configuracion'
 import ConfigUsuario from '@/pages/ConfigUsuario'
+import GestionMarcas from '@/pages/logistica/GestionMarcas'
 import GestionCompras from '@/pages/logistica/GestionCompras'
 import GestionUsuario from '@/pages/config/admin/GestionUsuario'
 import NuevaCategoria from '@/pages/logistica/NuevaCategoria'
@@ -55,6 +57,14 @@ export default new Router({
             {
                path: 'logistica/categorias/nuevo',
                component: NuevaCategoria,
+            },
+            {
+               path: '/logistica/marcas',
+               component: GestionMarcas,
+            },
+            {
+               path: '/logistica/marcas/nuevo',
+               component: NuevaMarca,
             }
          ]
       },

@@ -80,13 +80,18 @@ export default {
                      'path': '/logistica/categorias'
                   },
                   {
-                     'name': 'Proveedor',
+                     'name': 'Marcas',
                      'index': 5,
+                     'path': '/logistica/marcas'
+                  },
+                  {
+                     'name': 'Proveedor',
+                     'index': 6,
                      'path': '/logistica/proveedor'
                   },
                   {
                      'name': 'Locales',
-                     'index': 6,
+                     'index': 7,
                      'path': '/logistica/locales'
                   }
                ]
