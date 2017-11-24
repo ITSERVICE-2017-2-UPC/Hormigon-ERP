@@ -7,6 +7,7 @@ import MasterPage from '@/pages/MasterPage'
 import NuevoPerfil from '@/pages/config/admin/NuevoPerfil'
 import Configuracion from '@/pages/Configuracion'
 import ConfigUsuario from '@/pages/ConfigUsuario'
+import GestionCompras from '@/pages/logistica/GestionCompras'
 import GestionUsuario from '@/pages/config/admin/GestionUsuario'
 import ConfigProveedor from '@/pages/ConfigProveedor'
 import SolicitudRegistro from '@/pages/SolicitudRegistro'
@@ -40,6 +41,11 @@ export default new Router({
             {
                path: 'config/admin/perfil/nuevo',
                component: NuevoPerfil
+            },
+            {
+               path: 'logistica/compras',
+               component: GestionCompras
+
             }
          ]
       },

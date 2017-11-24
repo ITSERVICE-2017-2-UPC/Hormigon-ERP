@@ -58,9 +58,34 @@ export default {
                'name': 'Logística',
                'paths': [
                   {
-                     'name': 'Name1',
+                     'name': 'Compras',
+                     'index': 1,
+                     'path': '/logistica/compras'
+                  },
+                  {
+                     'name': 'Inventario',
                      'index': 2,
-                     'path': '/logistica/name1'
+                     'path': '/logistica/inventario'
+                  },
+                  {
+                     'name': 'Productos',
+                     'index': 3,
+                     'path': '/logistica/productos'
+                  },
+                  {
+                     'name': 'Categorias',
+                     'index': 4,
+                     'path': '/logistica/categorias'
+                  },
+                  {
+                     'name': 'Proveedor',
+                     'index': 5,
+                     'path': '/logistica/proveedor'
+                  },
+                  {
+                     'name': 'Locales',
+                     'index': 6,
+                     'path': '/logistica/locales'
                   }
                ]
             }
